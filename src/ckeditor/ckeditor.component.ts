@@ -304,6 +304,7 @@ export class CKEditorComponent implements AfterViewInit, OnDestroy, ControlValue
 
             // update
 			// cache-busting
+            // test commit
 			CKEDITOR.timestamp = new Date().getTime();
 
             element.id = elementId;
