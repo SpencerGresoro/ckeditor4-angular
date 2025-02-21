@@ -301,11 +301,14 @@ export class CKEditorComponent implements AfterViewInit, OnDestroy, ControlValue
 
         // if the user has specified an id on the node in which they're initializing on, use that ID as the name of the editor!
         if ( elementId ) {
-			// testing cache-busting
+
+            // update
+			// cache-busting
 			CKEDITOR.timestamp = new Date().getTime();
+
             element.id = elementId;
         }
-        
+
 		this.elementRef.nativeElement.appendChild( element );
 
 		const userInstanceReadyCallback = this.config?.on?.instanceReady;
