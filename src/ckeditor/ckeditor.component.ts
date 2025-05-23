@@ -300,16 +300,14 @@ export class CKEditorComponent implements AfterViewInit, OnDestroy, ControlValue
         const elementId = this.elementRef.nativeElement.id;
 
         // if the user has specified an id on the node in which they're initializing on, use that ID as the name of the editor!
-        if ( elementId ) {
-
-            // update
-			// cache-busting
-            // test commit
-			CKEDITOR.timestamp = new Date().getTime();
-
+        if (elementId) {
+            // ysi
+            const version = (document.querySelector('#app-version') as HTMLInputElement)?.value;
+            console.log('set..');
+            console.log('Build Version: ', version);            
+            CKEDITOR.timestamp = version;
             element.id = elementId;
-        }
-
+        }        
 		this.elementRef.nativeElement.appendChild( element );
 
 		const userInstanceReadyCallback = this.config?.on?.instanceReady;
